@@ -148,7 +148,9 @@ export default {
       name: '',
       email: '',
       password: '',
-      u: '',
+      pic: '',
+      des: '',
+      studentId: '',
     }
   },
   methods: {
@@ -158,7 +160,9 @@ export default {
         name: this.name,
         email: this.email,
         password: this.password,
-        u: this.u,
+        pic: this.pic,
+        des: this.des,
+        studentId: this.studentId,
       })
       console.log(result)
       if (result.status == 201) {

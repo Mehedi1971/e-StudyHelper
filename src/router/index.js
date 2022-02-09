@@ -7,6 +7,7 @@ import Profile from '../views/Profile.vue'
 import Links from '../views/Links.vue'
 import Forum from '../views/Forum.vue'
 import QuestionBank from '../views/QuestionBank.vue'
+import EditProfile from '../views/EditProfile.vue'
 import Login from '../components/Login.vue'
 import SignUp from '../components/SignUp.vue'
 
@@ -35,6 +36,11 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: Profile,
+  },
+  {
+    path: '/editprofile',
+    name: 'EditProfile',
+    component: EditProfile,
   },
   {
     path: '/questionBank',
