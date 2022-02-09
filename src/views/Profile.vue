@@ -13,7 +13,7 @@
     <div v-for="post in profile" :key="post.id">
       <div class="rounded-md bg-gray-400 m-2">
         <h3>{{ post.pic }}</h3>
-        <img src="${post.pic}" alt="" />
+        <img :src="post.pic" alt="" />
         <h3>{{ post.name }}</h3>
         <h3>{{ post.email }}</h3>
       </div>

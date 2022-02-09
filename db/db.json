@@ -1,6 +1,7 @@
 {
   "users": [
     {
+      "pic": "..assets/mehedi.jpg",
       "name": "mehedi",
       "email": "mehedi@gmail.com",
       "password": "mehedi",
