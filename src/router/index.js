@@ -5,9 +5,11 @@ import Contact from '../views/Contact.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Profile from '../views/Profile.vue'
 import Links from '../views/Links.vue'
+import CourseMaterials from '../views/CourseMaterials.vue'
 import Forum from '../views/Forum.vue'
-import QuestionBank from '../views/QuestionBank.vue'
 import EditProfile from '../views/EditProfile.vue'
+import UpdateProfile from '../views/UpdateProfile.vue'
+import QuestionBank from '../views/QuestionBank.vue'
 import Login from '../components/Login.vue'
 import SignUp from '../components/SignUp.vue'
 
@@ -43,9 +45,19 @@ const routes = [
     component: EditProfile,
   },
   {
+    path: '/updateprofile/:id',
+    name: 'UpdateProfile',
+    component: UpdateProfile,
+  },
+  {
     path: '/questionBank',
     name: 'QuestionBank',
     component: QuestionBank,
+  },
+  {
+    path: '/coursematerials',
+    name: 'CourseMaterials',
+    component: CourseMaterials,
   },
   {
     path: '/login',

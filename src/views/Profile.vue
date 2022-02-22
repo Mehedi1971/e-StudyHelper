@@ -20,16 +20,20 @@
       </div>
     </div> -->
 
-    <div class="container grid grid-cols-1 gap-16 max-w-screen mt-16">
-      <div class="bg-white p-6 flex rounded-xl">
-        <img :src="pic" alt="" class="w-10 h-10 rounded-md" />
-        <div>
-          <h1 class="p-2 pl-4 text-left font-bold">Name: {{ name }}</h1>
-          <p class="pl-4 text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea cum
-            aliquid commodi quasi delectus itaque veniam eius sunt. Soluta
-            laboriosam ratione accusamus quisquam non nemo nulla placeat
-            voluptatum rerum debitis!
+    <div
+      class="container grid grid-cols-1 gap-16 max-w-screen mt-16 max-w-6xl mx-auto"
+    >
+      <div class="bg-white p-6 md:flex rounded-xl">
+        <div class="w-10">
+          <img :src="pic" :alt="name" class="w-10 h-10 rounded-md" />
+        </div>
+        <div class="">
+          <h1 class="p-2 pl-4 text-left font-bold">
+            Name: {{ name }}
+            <a class="px-12" :href="`/updateprofile/` + id">edit</a>
+          </h1>
+          <p class="pl-4 text-justify pr-4 flex">
+            {{ description }}
           </p>
         </div>
       </div>
@@ -37,15 +41,28 @@
       <div class="bg-white p-6 text-left rounded-xl">
         <h1 class="p-2 pl-4">Name: {{ name }}</h1>
         <h1 class="p-2 pl-4">Email: {{ email }}</h1>
-        <h1 class="p-2 pl-4">des: {{ des }}</h1>
+        <h1 class="p-2 pl-4">des: {{ description }}</h1>
         <h1 class="p-2 pl-4">studentId: {{ studentId }}</h1>
+        <h1 class="p-2 pl-4">Address: {{ Address }}</h1>
+
+        <!-- <router-link to="`/updateprofile/`+items.id">edit profile</router-link>  -->
       </div>
     </div>
+    <!-- <div v-for="items in profile" :key="items.id"> -->
+    <!-- <tr v-for="items in profile" :key="items.id"> -->
+    <!-- <td>{{items.id}}</td> -->
+    <!-- <td><router-link to="`/updateprofile/`+items.id">edit profile</router-link></td> -->
+    <!-- <td><a :href="`/updateprofile/`+items.id">edit profile</a></td> -->
+    <!-- </tr> -->
+    <!-- <h1 v-for="items in profile" :key="items.id"><router-link to="/updateprofile/+items.id">edit profile</router-link> </h1>     -->
+    <!-- <router-link to="`/updateprofile/`+items.id">edit profile</router-link>  -->
+    <!-- </div> -->
     <Footer />
   </div>
 </template>
 
 <script>
+// import axios from 'axios'
 // import axios from 'axios'
 import Footer from '../components/Footer.vue'
 import Header from '../components/Header.vue'
@@ -55,15 +72,16 @@ export default {
     Header,
     Footer,
   },
-
   data() {
     return {
       name: '',
       email: '',
       pic: '',
-      des: '',
+      description: '',
       studentId: '',
       profile: [],
+      id: '',
+      Address: '',
     }
   },
   // methods: {
@@ -94,16 +112,20 @@ export default {
   //   this.profile = result
   // }
   // },
-
   mounted() {
     const user = localStorage.getItem('user-info')
     this.name = JSON.parse(user).name
     this.email = JSON.parse(user).email
     this.pic = JSON.parse(user).pic
-    this.des = JSON.parse(user).des
+    this.description = JSON.parse(user).description
     this.studentId = JSON.parse(user).studentId
+    this.id = JSON.parse(user).id
+    this.Address = JSON.parse(user).Address
+
+    // const result =await axios.get("http://localhost:3000/users/")
+    // this.profile=result.data
     if (!user) {
-      this.$router.push({ name: 'SignUp' })
+      this.$router.push({ name: 'Profile' })
     }
   },
 }
