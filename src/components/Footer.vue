@@ -1,9 +1,7 @@
 <template>
   <div>
     <footer class="text-center lg:text-left bg-gray-200 text-gray-600">
-      <div
-        class="mx-6 py-8 text-center md:text-left py-5 mt-5 max-w-6xl mx-auto"
-      >
+      <div class="py-8 text-center md:text-left mt-5 max-w-6xl mx-auto">
         <div
           class="container grid grid-cols-1 md:grid-cols-3 gap-16 max-w-screen mt-16"
         >
